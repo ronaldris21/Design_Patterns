@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProxyXamarinP.Views.NewPage">
+
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guardar" Command="{Binding Add}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="5,20,5,5">
+            <Label Text="{Binding Descripcion,Mode=TwoWay}"
+                           Margin="10"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!--FILA  0-->
+                        <Label Text="Nombres"
+                               Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Ingrese nombres"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding Nombre,Mode=TwoWay}"/>
+
+                        <!--FILA  1-->
+                        <Label Text="Apellidos"
+                               Grid.Column="0"
+                               Grid.Row="1"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Ingrese sus apellidos"
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding Apellido,Mode=TwoWay}"/>
+
+
+                        <!--FILA  2-->
+                        <Label Text="Dirección"
+                               Grid.Column="0"
+                               Grid.Row="2"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Dirección"
+                               Grid.Column="1"
+                               Grid.Row="2"
+                               Text="{Binding Direccion,Mode=TwoWay}"/>
+
+                        <!--FILA  3-->
+                        <Label Text="Edad"
+                               Grid.Column="0"
+                               Grid.Row="3"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Edad"
+                               Grid.Column="1"
+                               Grid.Row="3"
+                               Keyboard="Numeric"
+                               Text="{Binding Edad,Mode=TwoWay}"/>
+                    </Grid>
+                </Grid>
+                <StackLayout Grid.Row="1"
+                             BackgroundColor="AliceBlue"
+                             Margin="0,20,0,80"
+                             >
+
+                    <Label Text="Formulario para el registro  de personas a nuestra base de datos"
+                           Margin="10"/>
+
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+</ContentPage>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Repository"
+             x:Class="Repository.MainPage"
+             
+             >
+    <NavigationPage.TitleView>
+        <Label Text="Repository" FontAttributes="Bold" FontSize="Medium"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Page" Command="{Binding NewPerson}"/>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout Margin="5,20,5,5">
+        <!-- Place new controls here -->
+        <BoxView Color="Black"
+                 HeightRequest="1"/>
+        <Frame Margin="5"
+               CornerRadius="12"
+               HasShadow="True"
+               BackgroundColor="DodgerBlue"
+               >
+            <Grid HeightRequest="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombres"
+                       Grid.Column="0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+
+                <Label Text="Apellidos"
+                       Grid.Column="1"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Grid HeightRequest="30" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Dirección"
+                       Grid.Column="0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+
+                    <Label Text="Edad"
+                       Grid.Column="1"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                </Grid>
+
+            </Grid>
+        </Frame>
+
+        <BoxView Color="Black"
+                 HeightRequest="1"/>
+
+        <ListView
+            HasUnevenRows="True"
+            ItemsSource="{Binding Personas,Mode=TwoWay}"
+            SeparatorVisibility="None"
+            SelectedItem="{Binding PersonaSeleccionada,Mode=TwoWay}"
+            
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="5"
+                           CornerRadius="12"
+                           HasShadow="True"
+                           BackgroundColor="#91FFFF"
+                           >    
+                            <Grid HeightRequest="30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Nombre}"
+                                       Grid.Column="0"
+                                       />
+
+                                <Label Text="{Binding Apellido}"
+                                       Grid.Column="1"/>
+                                <Grid HeightRequest="30" Grid.Column="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Direccion}"
+                                           Grid.Column="0"
+                                           TextColor="Black"
+                                           FontSize="Micro"/>
+
+                                    <Label Text="{Binding Edad}"
+                                           Grid.Column="1"
+                                           TextColor="Black"
+                                           FontSize="Micro"/>
+                                </Grid>
+
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+
+
+
+</ContentPage>

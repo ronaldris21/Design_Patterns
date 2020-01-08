@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Repository.Views.ModifyDeletePage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Eliminar" Command="{Binding Delete}"/>
+        <ToolbarItem Text="Actualizar" Command="{Binding Edit}"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="5,20,5,5" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!--FILA  0-->
+                        <Label Text="Nombres"
+                               Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Ingrese nombres"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding Person.Nombre,Mode=TwoWay}"/>
+
+                        <!--FILA  1-->
+                        <Label Text="Apellidos"
+                               Grid.Column="0"
+                               Grid.Row="1"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Ingrese sus apellidos"
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding Person.Apellido,Mode=TwoWay}"/>
+
+
+                        <!--FILA  2-->
+                        <Label Text="Dirección"
+                               Grid.Column="0"
+                               Grid.Row="2"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Dirección"
+                               Grid.Column="1"
+                               Grid.Row="2"
+                               Text="{Binding Person.Direccion,Mode=TwoWay}"/>
+
+                        <!--FILA  3-->
+                        <Label Text="Edad"
+                               Grid.Column="0"
+                               Grid.Row="3"
+                               VerticalOptions="Center"
+                               TextColor="Black"
+                               />
+                        <Entry Placeholder="Edad"
+                               Grid.Column="1"
+                               Grid.Row="3"
+                               Keyboard="Numeric"
+                               Text="{Binding Person.Edad,Mode=TwoWay}"/>
+                    </Grid>
+                </Grid>
+                <StackLayout Grid.Row="1"
+                             BackgroundColor="AliceBlue"
+                             Margin="0,20,0,80"
+                             >
+
+                    <Label Text="Formulario para modificar datos"
+                           HorizontalOptions="Center"
+                           Margin="10"/>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
